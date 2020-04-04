@@ -3,11 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity2">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="600dp" />
+    <com.example.cardview.switchbutton.SwitchButton
+        app:layout_constraintTop_toBottomOf="@+id/rv"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/sb_default"
+        android:padding="10dp"
+        app:kswBackRadius="22dp"
+        app:kswThumbHeight="20dp"
+        app:kswThumbWidth="20dp"
+        app:kswThumbRadius="20dp"
+        app:kswBackDrawable="@drawable/ios_back_drawable"
+        app:kswFadeBack="true"
+        app:kswThumbColor="#ffffff"
+        app:kswThumbMarginRight="2dp"
+        app:kswThumbMarginLeft="2dp"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

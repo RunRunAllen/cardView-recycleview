@@ -1,7 +1,8 @@
 package com.example.cardview;
 
 import android.os.Bundle;
-import android.view.Window;
+import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.cardview.adapter.UniversalAdapter;
 import com.example.cardview.adapter.ViewHolder;
+import com.example.cardview.switchbutton.SwitchButton;
 
 import java.util.List;
 
@@ -25,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         RecyclerView rv = findViewById(R.id.rv);
+        final SwitchButton switchButton = findViewById(R.id.sb_default);
+
+        switchButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                switchButton.setEnabled(true);
+            }
+        });
+
         CardConfig.initConfig(this);
         rv.setLayoutManager(new SwipeCardLayoutManager());
 
